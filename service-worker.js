@@ -5,7 +5,7 @@ const urlsToCache = [
     '/bootstrap-5.3.3/css/bootstrap.min.css',
     '/js/app.js',
     '/bootstrap-5.3.3/js/bootstrap.min.js',
-    '/Manifest.json',
+    '/manifest.json',
 ];
 
 self.addEventListener('install', (event) => {
