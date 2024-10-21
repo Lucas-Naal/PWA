@@ -13,7 +13,9 @@ self.addEventListener('install', (event) => {
         caches.open(CACHE_NAME)
             .then((cache) => {
                 console.log('Archivos en caché');
-                return cache.addAll(urlsToCache);
+                return cache.addAll(urlsToCache).catch((error) => {
+                    console.error('Error al agregar archivos a la caché:', error);
+                });
             })
     );
 });
