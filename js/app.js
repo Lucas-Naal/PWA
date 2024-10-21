@@ -7,6 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
     let posts = JSON.parse(localStorage.getItem('posts')) || [];
     let currentEditIndex = null; // Para almacenar el índice del post que se está editando
 
+
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                console.log('Service Worker registrado con éxito:', registration);
+            }).catch(function(error) {
+                console.log('Error al registrar el Service Worker:', error);
+            });
+        });
+    }
+    
+
     // Mostrar publicaciones
     const renderPosts = () => {
         postsContainer.innerHTML = '';
@@ -137,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mostrar el contenedor del formulario y ocultar el botón
     createPostBtn.addEventListener('click', function() {
+        console.log('Botón Crear Publicación clickeado');
         postFormContainer.style.display = 'block'; // Mostrar formulario
         createPostBtn.style.display = 'none'; // Ocultar botón
     });
