@@ -3,14 +3,14 @@
     "name": "Blog PWA v1.0",
     "icons": [
         {
-            "src": "images/icon-192x192.png",
+            "src": "",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": ""
         },
         {
-            "src": "images/icon-512x512.png",
+            "src": "",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": ""
         }
     ],
     "start_url": "/index.html",
